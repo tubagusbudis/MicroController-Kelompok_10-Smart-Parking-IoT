@@ -62,5 +62,5 @@ Berikut adalah daftar komponen yang digunakan untuk membangun *prototype* sistem
 
 ## 🧑‍💻 Penulis
 * **Nama:** Tubagus Budi Sampurno
-* **Instansi:** Universitas Teknologi Bandung (Teknik Informatika / Teknik Industri '23)
+* **Instansi:** Universitas Teknologi Bandung (Teknik Informatika)
 * **Project Target:** Tugas Akhir Semester (UAS) Mikrokontroler
