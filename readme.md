@@ -1,6 +1,6 @@
 # Smart Parking IoT + Web Dashboard
 
-Projekt IoT Smart Parking System berbasis ESP32 dengan integrasi Web Dashboard, FreeRTOS Multitasking, Keamanan RFID, dan Analisis Data menggunakan Machine Learning. Proyek ini dirancang sebagai pemenuhan Tugas Akhir Semester (UAS) mata kuliah Mikrokontroler.
+Project IoT Smart Parking System berbasis ESP32 dengan integrasi Web Dashboard, FreeRTOS Multitasking, Keamanan RFID, dan Analisis Data menggunakan Machine Learning. Proyek ini dirancang sebagai pemenuhan Tugas Akhir Semester (UAS) mata kuliah Sistem Mikrokontroler.
 
 ## 📌 Deskripsi Proyek
 Sistem ini memodernisasi manajemen parkir konvensional menggunakan IoT. Pengendara melakukan autentikasi di gerbang masuk menggunakan kartu RFID. Setelah lolos verifikasi, palang pintu otomatis akan terbuka. Di dalam area parkir, sistem memantau ketersediaan slot secara *real-time* menggunakan sensor ultrasonik dan langsung mengirimkan datanya ke dashboard web/mobile via protokol MQTT. Data yang terkumpul dianalisis menggunakan Machine Learning untuk memprediksi jam-jam padat parkir.
@@ -61,6 +61,6 @@ Berikut adalah daftar komponen yang digunakan untuk membangun *prototype* sistem
 ---
 
 ## 👥 Team Members
-* **Tubagus** — IoT & Embedded Systems Developer (ESP32, Sensor Integration, MQTT, FreeRTOS, RFID)
-* **Farhan** — Machine Learning Engineer (Data Analysis, Prediction Model, Scikit-Learn, Analytics)
+* **Tubagus Budi Sampurno** — IoT & Embedded Systems Developer (ESP32, Sensor Integration, MQTT, FreeRTOS, RFID)
+* **Farhan Permana** — Machine Learning Engineer (Data Analysis, Prediction Model, Scikit-Learn, Analytics)
 * **Natalia Margaretha** — Web Developer (Dashboard Development, Backend Integration, Chart.js, UI/UX)
