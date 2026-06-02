@@ -60,7 +60,7 @@ Berikut adalah daftar komponen yang digunakan untuk membangun *prototype* sistem
 
 ---
 
-## 🧑‍💻 Penulis
-* **Nama:** Tubagus Budi Sampurno
-* **Instansi:** Universitas Teknologi Bandung (Teknik Informatika)
-* **Project Target:** Tugas Akhir Semester (UAS) Mikrokontroler
+##👥 Team Members
+* **Tubagus** — IoT & Embedded Systems Developer (ESP32, Sensor Integration, MQTT, FreeRTOS, RFID)
+* **Farhan** — Machine Learning Engineer (Data Analysis, Prediction Model, Scikit-Learn, Analytics)
+* **Natalia Margaretha** — Web Developer (Dashboard Development, Backend Integration, Chart.js, UI/UX)
