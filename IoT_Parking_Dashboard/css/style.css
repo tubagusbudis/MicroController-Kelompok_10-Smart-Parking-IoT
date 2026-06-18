@@ -1,0 +1,186 @@
+/* === VARIABEL WARNA & TEMA PREMIUM === */
+:root {
+    --bg-dark: #050b14; 
+    --bg-panel: rgba(13, 20, 36, 0.6);
+    --emerald: #00e676;
+    --emerald-glow: rgba(0, 230, 118, 0.5);
+    --emerald-glass: rgba(0, 230, 118, 0.1);
+    --red: #ff1744;
+    --red-glow: rgba(255, 23, 68, 0.5);
+    --red-glass: rgba(255, 23, 68, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --text-main: #f1f5f9;
+    --text-muted: #64748b;
+    --accent-blue: #0ea5e9;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+
+/* === ANIMATED BACKGROUND BLOBS === */
+.bg-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: -1;
+    animation: float 15s infinite alternate;
+}
+.blob-1 {
+    width: 400px; height: 400px;
+    background: rgba(14, 165, 233, 0.15);
+    top: -100px; left: -100px;
+}
+.blob-2 {
+    width: 500px; height: 500px;
+    background: rgba(0, 230, 118, 0.1);
+    bottom: -150px; right: 10%;
+    animation-delay: -5s;
+}
+
+@keyframes float {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(30px, 50px) scale(1.1); }
+}
+
+/* === HEADER === */
+.dashboard-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0 35px;
+    border-bottom: 1px solid var(--glass-border);
+    background: rgba(5, 11, 20, 0.8);
+    backdrop-filter: blur(20px);
+    height: 75px; z-index: 10;
+}
+
+.dashboard-header h2 { font-weight: 600; font-size: 1.4rem; letter-spacing: 1px; }
+.dashboard-header h2 span { color: var(--emerald); font-weight: 300; }
+
+.status-badge {
+    display: flex; align-items: center; gap: 8px;
+    padding: 8px 18px; border-radius: 30px;
+    font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
+    background: var(--red-glass); color: var(--red);
+    border: 1px solid var(--red-glow); transition: 0.4s ease;
+}
+.status-badge .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background-color: var(--red); box-shadow: 0 0 10px var(--red);
+}
+.status-badge.connected {
+    background: var(--emerald-glass); color: var(--emerald); border-color: var(--emerald-glow);
+}
+.status-badge.connected .dot { background-color: var(--emerald); box-shadow: 0 0 10px var(--emerald); }
+
+/* === LAYOUT UTAMA === */
+.dashboard-container {
+    display: grid; grid-template-columns: 2fr 1.2fr; gap: 25px;
+    padding: 25px 35px; height: calc(100vh - 75px); width: 100%; z-index: 10;
+}
+
+/* === KOMPONEN GLASSMORPHISM PREMIUM === */
+.glass-panel {
+    background: var(--bg-panel);
+    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px; padding: 25px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    display: flex; flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.glass-panel:hover { transform: translateY(-3px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5); }
+
+.panel-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 20px; padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.panel-header h3 { font-size: 1.05rem; color: var(--text-muted); font-weight: 500; text-transform: uppercase; letter-spacing: 1px; }
+.panel-header h3 i { margin-right: 8px; color: var(--accent-blue); }
+
+/* === KOLOM KIRI === */
+.left-column { display: flex; flex-direction: column; gap: 25px; height: 100%; min-height: 0; }
+.slots-container { display: flex; gap: 25px; height: 40%; }
+
+.slot-card {
+    flex: 1; justify-content: center; align-items: center;
+    text-align: center; position: relative; overflow: hidden;
+}
+.slot-icon { font-size: 2.5rem; margin-bottom: 10px; opacity: 0.5; transition: 0.3s; }
+.slot-title { font-size: 1rem; color: var(--text-muted); letter-spacing: 3px; margin-bottom: 5px; font-weight: 500; }
+.slot-status { font-size: 3rem; font-weight: 700; letter-spacing: 2px; }
+
+/* Warna Slot Dinamis dengan Glowing Keras */
+.slot-card.kosong { background: linear-gradient(145deg, rgba(0, 230, 118, 0.05) 0%, var(--bg-panel) 100%); border-color: rgba(0, 230, 118, 0.3); }
+.slot-card.kosong .slot-status, .slot-card.kosong .slot-icon { color: var(--emerald); text-shadow: 0 0 20px var(--emerald-glow); opacity: 1; }
+
+.slot-card.terisi { background: linear-gradient(145deg, rgba(255, 23, 68, 0.05) 0%, var(--bg-panel) 100%); border-color: rgba(255, 23, 68, 0.3); }
+.slot-card.terisi .slot-status, .slot-card.terisi .slot-icon { color: var(--red); text-shadow: 0 0 20px var(--red-glow); opacity: 1; }
+
+.chart-container { height: 60%; display: flex; flex-direction: column; }
+.canvas-wrapper { position: relative; flex: 1; width: 100%; min-height: 0; }
+
+/* === KOLOM KANAN === */
+.right-column { display: flex; flex-direction: column; gap: 25px; height: 100%; min-height: 0; }
+.half-panel { flex: 1; display: flex; flex-direction: column; overflow: hidden; min-height: 0; }
+.ai-panel { background: linear-gradient(180deg, var(--bg-panel) 0%, rgba(14, 165, 233, 0.05) 100%); border-color: rgba(14, 165, 233, 0.2); }
+.ai-panel .panel-header h3 i { color: var(--emerald); }
+
+/* Scrollbar Modern */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent-blue); }
+
+/* List Log */
+.log-list { list-style: none; overflow-y: auto; padding-right: 15px; flex-grow: 1; }
+.log-item {
+    padding: 12px 18px; margin-bottom: 10px;
+    background: rgba(0, 0, 0, 0.3); border-radius: 12px;
+    font-size: 0.85rem; border-left: 3px solid var(--accent-blue);
+    display: flex; align-items: center; transition: 0.2s;
+}
+.log-item:hover { background: rgba(0, 0, 0, 0.5); transform: translateX(4px); border-left-color: var(--emerald); }
+.log-time { color: var(--accent-blue); font-weight: 600; margin-right: 12px; font-size: 0.8rem; background: rgba(14, 165, 233, 0.1); padding: 2px 8px; border-radius: 6px; }
+
+/* AI Chat UI */
+.chat-history { flex-grow: 1; overflow-y: auto; padding-right: 15px; display: flex; flex-direction: column; gap: 15px; margin-bottom: 15px; }
+.chat-bubble { display: flex; gap: 12px; max-width: 90%; }
+.chat-bubble.ai { align-self: flex-start; }
+.chat-bubble.user { align-self: flex-end; flex-direction: row-reverse; }
+
+.chat-bubble .avatar {
+    width: 35px; height: 35px; border-radius: 50%; display: flex; justify-content: center; align-items: center;
+    background: var(--bg-dark); border: 1px solid var(--glass-border); font-size: 0.9rem; flex-shrink: 0;
+}
+.chat-bubble.ai .avatar { color: var(--emerald); border-color: var(--emerald-glow); box-shadow: 0 0 10px var(--emerald-glass); }
+.chat-bubble.user .avatar { color: var(--accent-blue); }
+
+.chat-bubble .message {
+    padding: 12px 16px; border-radius: 16px; font-size: 0.85rem; line-height: 1.6;
+}
+.chat-bubble.ai .message { background: rgba(0, 230, 118, 0.08); border: 1px solid rgba(0, 230, 118, 0.2); border-top-left-radius: 4px; }
+.chat-bubble.user .message { background: rgba(255, 255, 255, 0.05); border: 1px solid var(--glass-border); border-top-right-radius: 4px; color: var(--text-main); }
+
+.typing-indicator { font-size: 0.8rem; color: var(--accent-blue); margin-bottom: 10px; display: none; padding-left: 45px; }
+
+.chat-input-container { display: flex; gap: 12px; background: rgba(0, 0, 0, 0.2); padding: 8px; border-radius: 16px; border: 1px solid var(--glass-border); }
+.chat-input-container input {
+    flex: 1; background: transparent; border: none; color: var(--text-main);
+    padding: 10px 15px; outline: none; font-size: 0.9rem;
+}
+.chat-input-container button {
+    background: var(--accent-blue); color: white; border: none;
+    width: 45px; height: 45px; border-radius: 12px;
+    display: flex; justify-content: center; align-items: center;
+    cursor: pointer; transition: 0.3s; font-size: 1.1rem;
+}
+.chat-input-container button:hover { background: var(--emerald); box-shadow: 0 0 15px var(--emerald-glow); transform: scale(1.05); }
