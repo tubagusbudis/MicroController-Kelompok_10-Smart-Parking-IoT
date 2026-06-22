@@ -24,16 +24,16 @@ Berikut adalah daftar komponen yang digunakan untuk membangun *prototype* sistem
 * **1x** ESP32 NodeMCU Development Board (Otak Utama)
 * **2x** Sensor Ultrasonik HC-SR04 (Pendeteksi Mobil di Slot 1 & 2)
 * **1x** Modul RFID Reader MFRC522 (Autentikasi Gerbang Masuk)
-* **2x** Kartu / Tag RFID (Akses Valid & Invalid)
+* **1x** Kartu / Tag RFID (Akses Valid & Invalid)
 
 ### 2. Output & Indikator
 * **1x** Motor Servo SG90 / MG996R (Penggerak Palang Pintu)
 * **1x** LCD Display 16x2 + Modul I2C Backpack (Informasi Sisa Slot di Gerbang)
-* **2x** Lampu LED Merah (Indikator Slot Penuh)
-* **2x** Lampu LED Hijau (Indikator Slot Kosong)
+* **1x** Lampu LED Merah (Indikator Slot Penuh)
+* **1** Lampu LED Hijau (Indikator Slot Kosong)
 
 ### 3. Pendukung
-* **4x** Resistor 220 Ohm (Penahan Arus LED)
+* **2x** Resistor 220 Ohm (Penahan Arus LED)
 * **1x** Breadboard Besar (830 Titik)
 * **1 Pack** Kabel Jumper (Male-to-Male & Male-to-Female)
 * **1x** Kabel USB Data (Power & Upload Program)
