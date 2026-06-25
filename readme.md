@@ -30,7 +30,7 @@ Berikut adalah daftar komponen yang digunakan untuk membangun *prototype* sistem
 * **1x** Motor Servo SG90 / MG996R (Penggerak Palang Pintu)
 * **1x** LCD Display 16x2 + Modul I2C Backpack (Informasi Sisa Slot di Gerbang)
 * **1x** Lampu LED Merah (Indikator Slot Penuh)
-* **1** Lampu LED Hijau (Indikator Slot Kosong)
+* **1x** Lampu LED Hijau (Indikator Slot Kosong)
 
 ### 3. Pendukung
 * **2x** Resistor 220 Ohm (Penahan Arus LED)
@@ -44,8 +44,8 @@ Berikut adalah daftar komponen yang digunakan untuk membangun *prototype* sistem
 * **Microcontroller Development:** C++ (Arduino IDE) / FreeRTOS
 * **Communication Protocol:** MQTT (Message Queuing Telemetry Transport) & HTTP (Encrypted)
 * **Backend & Logic:** Node-RED / Laravel
-* **Frontend Visualization:** Chart.js (Untuk grafik *real-time* di Dashboard)
-* **Machine Learning:** Python (Scikit-Learn / Pandas) untuk analisis pola data parkir
+* **Frontend Visualization:** React / Html, Css & Javascript (Untuk grafik *real-time* di Dashboard)
+* **Machine Learning:** Javascript + Gemini | Smart Parking Assistant (Chatbot Interaktif) 
 
 ---
 
@@ -63,4 +63,4 @@ Berikut adalah daftar komponen yang digunakan untuk membangun *prototype* sistem
 ## 👥 Team Members
 * **Tubagus Budi Sampurno** — IoT & Embedded Systems Developer (ESP32, Sensor Integration, MQTT, FreeRTOS, RFID)
 * **Farhan Permana** — Machine Learning Engineer (Data Analysis, Prediction Model, Scikit-Learn, Analytics)
-* **Natalia Margaretha** — Web Developer (Dashboard Development, Backend Integration, Chart.js, UI/UX)
+* **Natalia Margaretha** — Web Developer (Dashboard Development, UI/UX)
