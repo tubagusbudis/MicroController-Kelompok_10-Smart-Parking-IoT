@@ -1,9 +1,9 @@
 # Smart Parking IoT + Web Dashboard
 
-Project IoT Smart Parking System berbasis ESP32 dengan integrasi Web Dashboard, FreeRTOS Multitasking, Keamanan RFID, dan Analisis Data menggunakan Machine Learning. Proyek ini dirancang sebagai pemenuhan Tugas Akhir Semester (UAS) mata kuliah Sistem Mikrokontroler.
+Project IoT Smart Parking System berbasis ESP32 dengan integrasi Web Dashboard, FreeRTOS Multitasking, Keamanan RFID, dan AI Assistant. Proyek ini dirancang sebagai pemenuhan Tugas Akhir Semester (UAS) mata kuliah Sistem Mikrokontroler.
 
 ## 📌 Deskripsi Proyek
-Sistem ini memodernisasi manajemen parkir konvensional menggunakan IoT. Pengendara melakukan autentikasi di gerbang masuk menggunakan kartu RFID. Setelah lolos verifikasi, palang pintu otomatis akan terbuka. Di dalam area parkir, sistem memantau ketersediaan slot secara *real-time* menggunakan sensor ultrasonik dan langsung mengirimkan datanya ke dashboard web/mobile via protokol MQTT. Data yang terkumpul dianalisis menggunakan Machine Learning untuk memprediksi jam-jam padat parkir.
+Sistem ini memodernisasi manajemen parkir konvensional menggunakan IoT. Pengendara melakukan autentikasi di gerbang masuk menggunakan kartu RFID. Setelah lolos verifikasi, palang pintu otomatis akan terbuka. Di dalam area parkir, sistem memantau ketersediaan slot secara *real-time* menggunakan sensor ultrasonik dan langsung mengirimkan datanya ke dashboard web/mobile via protokol MQTT. Terdapat AI Asistant/Chat Bot untuk memberikan informasi mengenai ketersediaan slot parkir.
 
 ---
 
@@ -13,7 +13,7 @@ Sistem ini memodernisasi manajemen parkir konvensional menggunakan IoT. Pengenda
 * **RFID Authentication:** Akses masuk aman menggunakan gerbang otomatis berbasis e-KTM atau Tag RFID.
 * **FreeRTOS Multitasking:** Sistem berjalan responsif tanpa *delay* berkat manajemen *task* simultan pada ESP32.
 * **Encrypted HTTP Data:** Transmisi data aman dari perangkat ke server dashboard.
-* **AI/ML Parking Analytics:** Fitur tambahan berupa prediksi jam parkir penuh dan analisis pola penggunaan lahan parkir.
+* **AI Assistant / Chat Bot:** Fitur tambahan untuk memberikan informasi ketersediaan slot parkir.
 
 ---
 
@@ -45,7 +45,7 @@ Berikut adalah daftar komponen yang digunakan untuk membangun *prototype* sistem
 * **Communication Protocol:** MQTT (Message Queuing Telemetry Transport) & HTTP (Encrypted)
 * **Backend & Logic:** Node-RED / Laravel
 * **Frontend Visualization:** React / Html, Css & Javascript (Untuk grafik *real-time* di Dashboard)
-* **Machine Learning:** Javascript + Gemini | Smart Parking Assistant (Chatbot Interaktif) 
+* **AI Assistant:** Javascript + Gemini | Smart Parking Assistant (Chatbot Interaktif) 
 
 ---
 
@@ -56,11 +56,11 @@ Berikut adalah daftar komponen yang digunakan untuk membangun *prototype* sistem
 4. **Indikator Fisik:** LED pada slot yang terisi akan berubah warna dari Hijau menjadi Merah.
 5. **Koneksi Data:** ESP32 mengirim data status slot ke broker MQTT secara *real-time*.
 6. **Dashboard:** Dashboard Web/Mobile menangkap data dari MQTT dan memperbarui visualisasi menggunakan Chart.js.
-7. **Analisis Data:** Data log parkir dikirim secara berkala ke server untuk diproses oleh model Machine Learning guna memprediksi tren kepadatan parkir.
+7. **AI Asistant / Chat Bot:** Kolom chat untuk menanyakan ketersediaan slot parkir.
 
 ---
 
 ## 👥 Team Members
 * **Tubagus Budi Sampurno** — IoT & Embedded Systems Developer (ESP32, Sensor Integration, MQTT, FreeRTOS, RFID)
-* **Farhan Permana** — Machine Learning Engineer (Data Analysis, Prediction Model, Scikit-Learn, Analytics)
+* **Farhan Permana** — AI Integration (Gemini API, Prompt Engineering, Smart Parking Assistant, Data Processing)
 * **Natalia Margaretha** — Web Developer (Dashboard Development, UI/UX)
