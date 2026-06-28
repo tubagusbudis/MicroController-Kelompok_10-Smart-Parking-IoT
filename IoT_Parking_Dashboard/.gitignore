@@ -1,0 +1,11 @@
+# Mengabaikan environment variables (SANGAT PENTING)
+.env
+.env.local
+
+# Mengabaikan folder dependencies Node.js
+node_modules/
+
+# File log dan cache OS
+npm-debug.log*
+.DS_Store
+dist/

@@ -1,98 +1,117 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Premium Smart Parking Dashboard</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <link rel="stylesheet" href="css/style.css">
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js"></script>
-</head>
-<body>
-
+  </head>
+  <body>
     <div class="bg-blob blob-1"></div>
     <div class="bg-blob blob-2"></div>
 
     <header class="dashboard-header">
-        <div class="logo">
-            <i class="fa-solid fa-car-side" style="color: var(--emerald); font-size: 1.5rem; margin-right: 10px;"></i>
-            <h2>Smart Parking <span>System</span></h2>
-        </div>
-        <div class="status-badge" id="mqtt-indicator">
-            <span class="dot"></span> <span id="mqtt-text">Disconnected</span>
-        </div>
+      <div class="logo">
+        <i
+          class="fa-solid fa-car-side"
+          style="color: var(--emerald); font-size: 1.5rem; margin-right: 10px"
+        ></i>
+        <h2>Smart Parking <span>System</span></h2>
+      </div>
+      <div class="status-badge" id="mqtt-indicator">
+        <span class="dot"></span> <span id="mqtt-text">Disconnected</span>
+      </div>
     </header>
 
     <main class="dashboard-container">
-        
-        <section class="left-column">
-            <div class="slots-container">
-                <div id="card-slot1" class="glass-panel slot-card kosong">
-                    <div class="slot-icon"><i class="fa-solid fa-square-parking"></i></div>
-                    <h3 class="slot-title">SLOT 1</h3>
-                    <div id="status-slot1" class="slot-status">KOSONG</div>
-                </div>
-                <div id="card-slot2" class="glass-panel slot-card kosong">
-                    <div class="slot-icon"><i class="fa-solid fa-square-parking"></i></div>
-                    <h3 class="slot-title">SLOT 2</h3>
-                    <div id="status-slot2" class="slot-status">KOSONG</div>
-                </div>
+      <section class="left-column">
+        <div class="slots-container">
+          <div id="card-slot1" class="glass-panel slot-card kosong">
+            <div class="slot-icon">
+              <i class="fa-solid fa-square-parking"></i>
             </div>
-            
-            <div class="glass-panel chart-container">
-                <div class="panel-header">
-                    <h3><i class="fa-solid fa-chart-area"></i> Tren Kepadatan Harian</h3>
-                </div>
-                <div class="canvas-wrapper">
-                    <canvas id="densityChart"></canvas>
-                </div>
+            <h3 class="slot-title">SLOT 1</h3>
+            <div id="status-slot1" class="slot-status">KOSONG</div>
+          </div>
+          <div id="card-slot2" class="glass-panel slot-card kosong">
+            <div class="slot-icon">
+              <i class="fa-solid fa-square-parking"></i>
             </div>
-        </section>
+            <h3 class="slot-title">SLOT 2</h3>
+            <div id="status-slot2" class="slot-status">KOSONG</div>
+          </div>
+        </div>
 
-        <section class="right-column">
-            
-            <div class="glass-panel half-panel">
-                <div class="panel-header">
-                    <h3><i class="fa-solid fa-list-ul"></i> Log Gerbang Masuk</h3>
-                </div>
-                <ul id="log-list" class="log-list">
-                    </ul>
-            </div>
+        <div class="glass-panel chart-container">
+          <div class="panel-header">
+            <h3>
+              <i class="fa-solid fa-chart-area"></i> Tren Kepadatan Harian
+            </h3>
+          </div>
+          <div class="canvas-wrapper">
+            <canvas id="densityChart"></canvas>
+          </div>
+        </div>
+      </section>
 
-            <div class="glass-panel half-panel ai-panel">
-                <div class="panel-header">
-                    <h3><i class="fa-solid fa-robot"></i> AI Assistant</h3>
-                </div>
-                
-                <div class="chat-history" id="chat-history">
-                    <div class="chat-bubble ai">
-                        <div class="avatar"><i class="fa-solid fa-microchip"></i></div>
-                        <div class="message">
-                            <strong>System Core:</strong><br>
-                            Pemantauan dashboard aktif. Silakan ketik instruksi Anda.
-                        </div>
-                    </div>
-                </div>
-                
-                <div id="typing-indicator" class="typing-indicator">
-                    <i class="fa-solid fa-circle-notch fa-spin"></i> Memproses data...
-                </div>
-                
-                <div class="chat-input-container">
-                    <input type="text" id="chat-input" placeholder="Ketik perintah..." autocomplete="off">
-                    <button id="btn-send"><i class="fa-solid fa-paper-plane"></i></button>
-                </div>
-            </div>
+      <section class="right-column">
+        <div class="glass-panel half-panel">
+          <div class="panel-header">
+            <h3><i class="fa-solid fa-list-ul"></i> Log Gerbang Masuk</h3>
+          </div>
+          <ul id="log-list" class="log-list"></ul>
+        </div>
 
-        </section>
+        <div class="glass-panel half-panel ai-panel">
+          <div class="panel-header">
+            <h3><i class="fa-solid fa-robot"></i> AI Assistant</h3>
+          </div>
+
+          <div class="chat-history" id="chat-history">
+            <div class="chat-bubble ai">
+              <div class="avatar"><i class="fa-solid fa-microchip"></i></div>
+              <div class="message">
+                <strong>System Core:</strong><br />
+                Pemantauan dashboard aktif! <br />
+                Tanya AI untuk Slot Parkir
+              </div>
+            </div>
+          </div>
+
+          <div id="typing-indicator" class="typing-indicator">
+            <i class="fa-solid fa-circle-notch fa-spin"></i> Memproses data...
+          </div>
+
+          <div class="chat-input-container">
+            <input
+              type="text"
+              id="chat-input"
+              placeholder="Ketik perintah..."
+              autocomplete="off"
+            />
+            <button id="btn-send">
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <script src="js/app.js"></script>
-</body>
+    <div id="toast-container"></div>
+    <script type="module" src="js/app.js"></script>
+  </body>
 </html>
